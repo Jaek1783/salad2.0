@@ -1,19 +1,31 @@
 import styled from 'styled-components';
+import { useRef } from 'react';
 const SignPageComponent = ()=>{
+    const nameRef = useRef('');
+    const emailRef = useRef('');
+    const passwordRef = useRef('');
+
+    const signHandler = (event)=>{
+        event.preventDefault();
+        const name = nameRef.current.value;
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
+        console.log(name, email, password);
+    }
     return <StyledSignPageComponent>
         <div className='formContainer'>
-            <form action="" method="get">
+            <form onSubmit={signHandler}>
                 <div className="inputContainer">
                     <label htmlFor="name">Enter your name: </label>
-                    <input type="text" name="name" id="nmae" required />
+                    <input type="text" name="name" id="nmae" required ref={nameRef}/>
                 </div>
                 <div className="inputContainer">
                     <label htmlFor="email">Enter your email: </label>
-                    <input type="email" name="email" id="email" required />
+                    <input type="email" name="email" id="email" required ref={emailRef}/>
                 </div>
                 <div className="inputContainer">
                     <label htmlFor="name">Enter your password: </label>
-                    <input type="password" name="password" id="password" required />
+                    <input type="password" name="password" id="password" required ref={passwordRef}/>
                 </div>
                 <div className="">
                     <input type="submit" value="회원가입" />

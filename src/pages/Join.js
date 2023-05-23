@@ -14,14 +14,12 @@ const JoinPageComponent = ()=>{
         <div className='formContainer'>
             <form onSubmit={joinHandler}>
                 <div className="inputContainer">
-                    <label htmlFor="email">Enter your email: </label>
-                    <input type="email" name="email" id="email" required ref={emailRef}/>
+                    <input type="email" name="email" id="email" required ref={emailRef} placeholder='아이디'/>
                 </div>
                 <div className="inputContainer">
-                    <label htmlFor="name">Enter your password: </label>
-                    <input type="password" name="password" id="password" required ref={passwordRef}/>
+                    <input type="password" name="password" id="password" required ref={passwordRef} placeholder='비밀번호'/>
                 </div>
-                <div className="">
+                <div className="submitButton">
                     <button type='submit'>로그인</button>
                 </div>
             </form>
@@ -46,6 +44,16 @@ align-items : center;
         display:flex;
         justify-content:space-between;
         align-items : center;
+        padding-bottom:1rem;
+        input{
+            padding:.2rem;
+        }
+    }
+    .submitButton{
+        button {
+            padding:.5rem;
+            width:100%;
+        }
     }
 
 `

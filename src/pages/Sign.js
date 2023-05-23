@@ -27,8 +27,8 @@ const SignPageComponent = ()=>{
                     <label htmlFor="name">Enter your password: </label>
                     <input type="password" name="password" id="password" required ref={passwordRef}/>
                 </div>
-                <div className="">
-                    <input type="submit" value="회원가입" />
+                <div className="submitButton">
+                    <button type="submit">회원가입</button>
                 </div>
             </form>
         </div>
@@ -52,6 +52,16 @@ align-items : center;
         display:flex;
         justify-content:space-between;
         align-items : center;
+        padding-bottom:1rem;
+        input{
+            padding:.2rem;
+        }
+    }
+    .submitButton{
+        button {
+            padding:.5rem;
+            width:100%;
+        }
     }
 
 `

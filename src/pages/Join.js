@@ -1,26 +1,25 @@
 import styled from 'styled-components';
 import { useRef } from 'react';
 const JoinPageComponent = ()=>{
-    const dateRef = useRef('');
+    const emailRef = useRef('');
+    const passwordRef = useRef('');
 
-    const buttonHandler = (event)=>{
+    const joinHandler = (event)=>{
         event.preventDefault();
-        console.log(dateRef.current.value);
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
+        console.log(email, password);
     }
     return <StyledJoinPageComponent>
         <div className='formContainer'>
-            <form onSubmit={buttonHandler}>
-                <div className="inputContainer">
-                    <label htmlFor="date">Enter your date: </label>
-                    <input type="date" name="date" id="date" required ref={dateRef}/>
-                </div>
+            <form onSubmit={joinHandler}>
                 <div className="inputContainer">
                     <label htmlFor="email">Enter your email: </label>
-                    <input type="email" name="email" id="email" required />
+                    <input type="email" name="email" id="email" required ref={emailRef}/>
                 </div>
                 <div className="inputContainer">
                     <label htmlFor="name">Enter your password: </label>
-                    <input type="password" name="password" id="password" required />
+                    <input type="password" name="password" id="password" required ref={passwordRef}/>
                 </div>
                 <div className="">
                     <button type='submit'>로그인</button>
